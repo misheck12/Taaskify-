@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>Customer Dashboard</h1>
+  <p>Welcome to your dashboard!</p>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Task Listings</h2>
+      <% @tasks.each do |task| %>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h3 class="card-title"><%= task.title %></h3>
+            <p class="card-text"><%= task.description %></p>
+            <p class="card-text"><strong>Status:</strong> <%= task.status %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <h2>Account Information</h2>
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text"><strong>Name:</strong> <%= current_user.name %></p>
+          <p class="card-text"><strong>Email:</strong> <%= current_user.email %></p>
+          <!-- Add more user details as needed -->
+        </div>
+      </div>
+      <h2>Payment History</h2>
+      <div class="card mb-3">
+        <div class="card-body">
+          <p class="card-text"><strong>Date:</strong>11 july 2022</p>
+          <p class="card-text"><strong>Amount:</strong> k300</p>
+          <!-- Display more payment details as needed -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

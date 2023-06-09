@@ -1,0 +1,30 @@
+<% if @item %>
+  <% if @item.is_a?(User) %>
+    <%= form_for(@item, url: admin_manage_path(type: 'user', id: @item.id), method: :post) do |f| %>
+      <!-- User form fields -->
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.submit 'Update' %>
+      <%= button_to 'Delete', admin_manage_path(type: 'user', id: @item.id), method: :post, params: { commit: 'Delete' }, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    <% end %>
+  <% elsif @item.is_a?(Task) %>
+    <%= form_for(@item, url: admin_manage_path(type: 'task', id: @item.id), method: :post) do |f| %>
+      <!-- Task form fields -->
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+
+      <%= f.label :status %>
+      <%= f.select :status, Task.statuses.keys %>
+
+      <%= f.submit 'Update' %>
+      <%= button_to 'Delete', admin_manage_path(type: 'task', id: @item.id), method: :post, params: { commit: 'Delete' }, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    <% end %>
+  <% end %>
+<% end %>

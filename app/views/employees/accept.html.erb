@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="dashboard-title">Accept Tasks</h1>
+  <p class="dashboard-description">Accept tasks assigned to you</p>
+
+  <section class="dashboard-section">
+    <h2 class="section-title">Available Tasks</h2>
+    <% @available_tasks.each do |task| %>
+      <div class="card task">
+        <div class="card-body">
+          <h3 class="card-title"><%= task.title %></h3>
+          <p class="card-text"><%= task.description %></p>
+          <p class="card-text">Status: <%= task.status %></p>
+          <p class="card-text">Posted By: <%= task.customer.name %></p>
+          <%= link_to "Accept Task", employee_accept_task_path(task), method: :post, class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </section>
+</div>

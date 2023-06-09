@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mizu Research</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <section id="welcome-section" class="col-12" style="position: relative;">
+        <%= image_tag('pic.png', alt: "Services Image", style: "position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;") %>
+        <div class="content-overlay">
+          <h1 class="section-title">Welcome to Mizu Research</h1>
+          <p class="section-description">Find the perfect solution for your research.</p>
+          <%= link_to "Browse Tasks", "/tasks", class: "btn btn-outline-primary" %>
+        </div>
+      </section>
+    </div>
+    <div class="row">
+      <section id="about-section" class="col-12 col-md-6">
+        <h2 class="section-title">About Us</h2>
+        <p class="section-description">We connect talented freelancers with clients seeking their skills.</p>
+      </section>
+      <section id="services-section" class="col-12 col-md-6">
+        <h2 class="section-title">Our Services</h2>
+        <ul class="service-list list-group">
+          <li class="list-group-item">Academic</li>
+          <li class="list-group-item">Business</li>
+          <li class="list-group-item">Technology</li>
+          <li class="list-group-item">Government</li>
+        </ul>
+      </section>
+    </div>
+    <div class="row">
+      <section id="testimonial-section" class="col-12">
+        <h2 class="section-title">Client Testimonials</h2>
+        <div class="testimonial card">
+          <div class="card-body">
+            <blockquote>
+              "I found the perfect freelancer for my project. The platform made it easy to connect and collaborate."
+            </blockquote>
+            <cite>- John Doe, Client</cite>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="row">
+      <section id="portfolio-section" class="col-12">
+        <h2 class="section-title">Our Portfolio</h2>
+        <p class="section-description">Check out some of the amazing projects that our freelancers have delivered.</p>
+        <div class="card-columns">
+          <div class="card">
+            <%= image_tag('pic.png', alt: "Project 1", class: "card-img-top") %>
+            <div class="card-body">
+              <h5 class="card-title">Project 1</h5>
+            </div>
+          </div>
+          <div class="card">
+            <%= image_tag('pic.png', alt: "Project 2", class: "card-img-top") %>
+            <div class="card-body">
+              <h5 class="card-title">Project 2</h5>
+            </div>
+          </div>
+          <div class="card">
+            <%= image_tag('pic.png', alt: "Project 3", class: "card-img-top") %>
+            <div class="card-body">
+              <h5 class="card-title">Project 3</h5>
+            </div>
+          </div>
+          <!-- ... -->
+        </div>
+      </section>      
+    </div>    
+    <div class="row">
+      <section id="contact-section" class="col-12">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-description">Have a question? Reach out to our team for assistance.</p>
+        <%= link_to "Contact Us", "/contact", class: "btn btn-outline-secondary" %>
+      </section>      
+    </div>    
+    <div class="row">
+      <section id="blog-section" class="col-12">
+        <h2 class="section-title">Our Blog</h2>
+        <p class="section-description">Read our latest articles on freelancing and hiring.</p>        
+        <ul class="blog-list list-unstyled">
+          <li class="media">
+            <%= image_tag('pic.png', alt: "Blog 1", class: "mr-3") %>
+            <div class="media-body">
+              <h5 class="mt-0 mb-1">How to write a great project description</h5>
+              <p>A project description is the first thing that a freelancer sees when browsing for tasks. Learn how to write a clear and concise description that attracts the best talent.</p>
+              <%= link_to "Read More", "/blog/1", class: "btn btn-outline-primary" %>
+            </div>
+          </li>
+          <li class="media">
+            <%= image_tag('pic.png', alt: "Blog 2", class: "mr-3") %>
+            <div class="media-body">
+              <h5 class="mt-0 mb-1">How to manage your time as a freelancer</h5>
+              <p>Time management is one of the most important skills for a freelancer. Learn how to plan your schedule, prioritize your tasks, and avoid distractions.</p>
+              <%= link_to "Read More", "/blog/2", class: "btn btn-outline-primary" %>
+            </div>
+          </li>
+          <li class="media">
+            <%= image_tag('pic.png', alt: "Blog 3", class: "mr-3") %>
+            <div class="media-body">
+              <h5 class="mt-0 mb-1">How to communicate effectively with your clients</h5>
+              <p>Communication is key for a successful freelance project. Learn how to establish trust, set expectations, and provide feedback with your clients.</p>
+              <%= link_to "Read More", "/blog/3", class: "btn btn-outline-primary" %>
+            </div>
+          </li>
+          <!-- ... -->
+        </ul>        
+      </section>      
+    </div>    
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

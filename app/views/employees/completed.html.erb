@@ -1,0 +1,18 @@
+<div class="container">
+  <h1 class="dashboard-title">Completed Tasks</h1>
+  <p class="dashboard-description">View your completed tasks</p>
+
+  <section class="dashboard-section">
+    <h2 class="section-title">Completed Tasks List</h2>
+    <% @completed_tasks.each do |task| %>
+      <div class="card task">
+        <div class="card-body">
+          <h3 class="card-title"><%= task.title %></h3>
+          <p class="card-text"><%= task.description %></p>
+          <p class="card-text">Status: <%= task.status %></p>
+          <p class="card-text">Completed At: <%= task.completed_at.strftime('%Y-%m-%d %H:%M') %></p>
+        </div>
+      </div>
+    <% end %>
+  </section>
+</div>

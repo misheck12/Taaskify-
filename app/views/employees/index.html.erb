@@ -1,0 +1,39 @@
+<div class="container">
+  <h1 class="dashboard-title">Employee Dashboard</h1>
+  <p class="dashboard-description">Manage your tasks and projects</p>
+
+  <section class="dashboard-section">
+    <h2 class="section-title">Your Tasks</h2>
+    <% @tasks.each do |task| %>
+      <div class="card task">
+        <div class="card-body">
+          <h3 class="card-title"><%= task.title %></h3>
+          <p class="card-text"><%= task.description %></p>
+          <p class="card-text">Status: <%= task.status %></p>
+        </div>
+      </div>
+    <% end %>
+  </section>
+
+  <section class="dashboard-section">
+    <h2 class="section-title">Project Management</h2>
+    <ul class="list-group project-list">
+      <% @projects.each do |project| %>
+        <li class="list-group-item"><%= project.name %></li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="dashboard-section">
+    <h2 class="section-title">Notifications</h2>
+    <% if @notifications.empty? %>
+      <p class="no-notifications">No new notifications.</p>
+    <% else %>
+      <ul class="list-group notification-list">
+        <% @notifications.each do |notification| %>
+          <li class="list-group-item"><%= notification.message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </section>
+</div>

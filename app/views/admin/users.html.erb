@@ -1,0 +1,24 @@
+<h1>Admin#users</h1>
+<p>Find me in app/views/admin/users.html.erb</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td>
+          <%= link_to 'Edit', admin_manage_path(type: 'user', id: user.id) %>
+          <%= link_to 'Delete', admin_manage_path(type: 'user', id: user.id), method: :delete, data: { confirm: 'Are you sure you want to delete this user?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
